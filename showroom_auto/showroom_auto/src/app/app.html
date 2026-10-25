@@ -1,0 +1,22 @@
+<app-head-bar></app-head-bar>
+<main>
+  <section class="hero">
+    <div class="hero-copy">
+      <span class="eyebrow"><span class="pulse"></span> PREMIUM CAR COLLECTION</span>
+      <h1>Drive your<br><em>next story.</em></h1>
+      <p>Discover a handpicked collection of exceptional cars. Designed for the road, chosen for you.</p>
+      <div class="hero-actions"><a class="primary-link" href="#collection">Explore collection <span>↘</span></a><span class="hero-note">Luxury · Performance · Confidence</span></div>
+      <div class="hero-stats"><div><strong>16<span>+</span></strong><small>Curated models</small></div><div><strong>04</strong><small>Premium brands</small></div><div><strong>100%</strong><small>Driven by passion</small></div></div>
+    </div>
+    <div class="hero-visual"><div class="visual-glow"></div><div class="visual-label">THE ART OF THE DRIVE <span>— 2026 COLLECTION</span></div><img src="images/CLASS-C.webp" alt="Mercedes-Benz C-Class premium car"/><div class="visual-bottom"><span>01 / FEATURED</span><span>Mercedes-Benz C-Class</span></div></div>
+  </section>
+  <section class="collection-section" id="collection">
+    <div class="section-heading"><div><span class="eyebrow">FIND YOUR MATCH</span><h2>Explore the <em>collection.</em></h2></div><p>From everyday elegance to bold performance,<br>find the car that feels like you.</p></div>
+    <app-search-bar [autos]="autoList" (onSelectCar)="selectCar($event)"></app-search-bar>
+    @if(selectedCar){
+      <section class="selected-panel" aria-live="polite"><button class="close-detail" (click)="selectedCar = undefined" aria-label="Close details">×</button><div class="selected-image"><img [src]="'images/' + selectedCar.photo" [alt]="selectedCar.brand + ' ' + selectedCar.model"/></div><div class="selected-info"><span class="eyebrow">YOUR NEXT DRIVE</span><h3>{{selectedCar.brand}} <em>{{selectedCar.model}}</em></h3><p>{{selectedCar.description}}</p><div class="detail-stats"><div><small>Power tax</small><strong>{{selectedCar.power}} CV</strong></div><div><small>Availability</small><strong>{{selectedCar.availability}} in stock</strong></div><div><small>Price</small><strong>{{selectedCar.price}} <small class="currency">TND*</small></strong></div></div><a class="primary-link" href="mailto:contact@showroomauto.tn?subject=Car%20enquiry">Request information <span>↗</span></a></div></section>
+    }
+  </section>
+  <section class="promise-strip"><div class="promise-icon">✦</div><div><span class="eyebrow">MORE THAN A SHOWROOM</span><h2>Your journey deserves <em>something exceptional.</em></h2></div><p>Carefully selected vehicles. Personal attention. A smoother way to find your next car.</p><a href="mailto:contact@showroomauto.tn" class="text-link">Talk to our team ↗</a></section>
+</main>
+<footer><a class="footer-brand" href="#top"><span class="brand-mark">S</span> SHOWROOM<span class="brand-light">AUTO</span></a><span>Find the drive that moves you.</span><span>© 2026 Showroom Auto</span></footer>
